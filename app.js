@@ -25,6 +25,8 @@ mongoose.connect(process.env.MONGO_URL,
     })
 
 app.use('/',authRouter)
+app.use('/',usersRouter)
+
 
 app.listen(3000,()=>{
     console.log('server at 3000');
