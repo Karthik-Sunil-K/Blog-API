@@ -31,9 +31,23 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// router.get('/allUsers',async (req,res)=>{
-//     users = 
-// })
+router.delete('/:id', async(req,res)=>{
+    if(req.params.id==req.body.userId){
+        try {
+            await User.findByIdAndDelete(req.params.id)
+            res.status(200).json({
+                message:"deleted"
+            })
+        } catch (error) {
+            res.status(500).json({
+                message:"retry"
+            })
+        }
+
+    }else(
+        res.status(401).json({message:"u can only delete yours"})
+    )
+})
 
 
 
