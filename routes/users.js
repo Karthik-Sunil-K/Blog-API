@@ -9,7 +9,7 @@ router.put('/:id', async (req, res) => {
     if(req.body.userId==req.params.id){
         if(req.body.password){
             const salt = bcrypt.genSalt(10)
-            req.body.password=bcrypt.hash(req.body.password,salt)
+            req.body.password= await bcrypt.hash(req.body.password,salt)
         }
         try {
             const updatedUser = await User.findByIdAndUpdate(
@@ -17,7 +17,7 @@ router.put('/:id', async (req, res) => {
                 {$set:req.body},
             )
             res.status(200).json({
-                message:"user updated sduccessfully",
+                message:"user updaaated sduccessfully",
                 user:updatedUser
             })
         } catch (error) {
@@ -29,7 +29,11 @@ router.put('/:id', async (req, res) => {
     }else{
         res.status(401).json({message:"you can only update yourd account"})
     }
-})
+});
+
+// router.get('/allUsers',async (req,res)=>{
+//     users = 
+// })
 
 
 
