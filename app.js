@@ -26,6 +26,7 @@ mongoose.connect(process.env.MONGO_URL,
 
 app.use('/',authRouter)
 app.use('/',usersRouter)
+app.use('/',postRouter)
 
 
 app.listen(3000,()=>{
