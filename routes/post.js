@@ -12,7 +12,10 @@ router.post('/newpost', async (req, res) => {
     const newpost = new Post(req.body);
     try {
         const post = await newpost.save();
-        res.status(200).json(post)
+        res.status(200).json({
+            message:"Post created Successfully!",
+            post:newpost
+        })
     } catch (error) {
         res.status(500).json({
             message: "cant add new post " + error
@@ -91,16 +94,27 @@ router.get('/post/:id',async(req,res)=>{
 
 //all posts
 router.get('/posts',async(req,res)=>{
-    try {
-        const posts= await Post.find()
-        res.status(200).json({
-            posts:posts
-        })
-    } catch (err) {
-        res.status(500).json({
-            message:"cant fetch posts try again"
-        })
+    const username = req.query.user;
+    const catname= req.query.cat
+   try {
+    let posts;
+    if(username){
+        posts = await Post.find({username:username})
+    }else if(catname){
+        posts = await Post.find({
+            category:{
+                $in:[catname]
+            }
+        });
+    }else{
+        posts = await Post.find()
     }
+    res.status(200).json({
+        posts:posts
+    })
+   } catch (error) {
+    
+   }
 })
 
 module.exports = router
