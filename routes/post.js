@@ -72,6 +72,24 @@ router.delete('/delete/:id', async (req, res) => {
             message: "cant fetch post details"
         })
     }
-})
+});
+
+//get indivitaul post by post id
+router.get('/posts/:id',async(req,res)=>{
+    const postId= req.params.id;
+    try {
+        const post = await Post.findById(postId)
+        res.status(200).json({
+            post:post
+        });
+    } catch (err) {
+        res.status(500).json({
+            message:"cant fetch details"
+        })
+    }
+});
+
+//all posts
+r
 
 module.exports = router
