@@ -75,7 +75,7 @@ router.delete('/delete/:id', async (req, res) => {
 });
 
 //get indivitaul post by post id
-router.get('/posts/:id',async(req,res)=>{
+router.get('/post/:id',async(req,res)=>{
     const postId= req.params.id;
     try {
         const post = await Post.findById(postId)
@@ -90,6 +90,17 @@ router.get('/posts/:id',async(req,res)=>{
 });
 
 //all posts
-r
+router.get('/posts',async(req,res)=>{
+    try {
+        const posts= await Post.find()
+        res.status(200).json({
+            posts:posts
+        })
+    } catch (err) {
+        res.status(500).json({
+            message:"cant fetch posts try again"
+        })
+    }
+})
 
 module.exports = router
