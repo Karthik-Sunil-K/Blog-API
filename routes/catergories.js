@@ -2,17 +2,17 @@ const express = require('express');
 const { json, send } = require('express/lib/response');
 const router = express.Router();
 const User = require('../model/users')
-const Catergories=require('../model/categories')
+const Catergories = require('../model/categories')
 
 
 
 router.post('/category', async (req, res) => {
-    const newcat = new Post(req.body);
+    const newcat = new Catergories(req.body);
     try {
-        const post = await newpost.save();
+        const categories = await newcat.save();
         res.status(200).json({
-            message:"Post created Successfully!",
-            post:newpost
+            message: "new category added",
+            cats: categories
         })
     } catch (error) {
         res.status(500).json({
@@ -20,6 +20,17 @@ router.post('/category', async (req, res) => {
         })
     }
 });
+router.get('/category', async (req, res) => {
+
+    try {
+        const cat = await Catergories.find()
+        res.status(200).json(cat)
+    } catch (error) {
+        res.status(500).json({
+            message: "cant fetch users details" + error
+        })
+    }
+})
 
 
 module.exports = router
