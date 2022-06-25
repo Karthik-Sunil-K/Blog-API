@@ -3,6 +3,7 @@ const { json } = require('express/lib/response');
 const router = express.Router();
 const User = require('../model/users')
 const bcrypt = require('bcrypt');
+const { db } = require('../model/users');
 
 //userupdate
 router.put('/:id', async (req, res) => {
@@ -36,7 +37,7 @@ router.delete('/:id', async(req,res)=>{
         try {
             await User.findByIdAndDelete(req.params.id)
             res.status(200).json({
-                message:"deleted"
+                message:"deleted succesfully"
             })
         } catch (error) {
             res.status(500).json({
@@ -47,19 +48,19 @@ router.delete('/:id', async(req,res)=>{
         res.status(401).json({message:"u can only delete yours"})
     )
 })
-router.get('/admin/usersList/:number', async (req,res)=>{
-    const userList = req.params.number
+//admin route
+router.get('/admin/usersList/', async (req,res)=>{
     
  try {
     const users= await User.find()
-    const copy=[...users];
-    const newcpy=copy.slice(1,userList)
-    console.log(users[5].password)
+    
     res.status(200).json({
-        message:newcpy
+        count:users.length,
+       message:users
     })
  } catch (error) {
     res.status(500).json({
+        
         message:"cant fetch users details"+error
     })
  }    
