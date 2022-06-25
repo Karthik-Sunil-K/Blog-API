@@ -80,7 +80,6 @@ router.get('/admin/usersList/', async (req,res)=>{
     
  try {
     const users= await User.find()
-    
     res.status(200).json({
         count:users.length,
        message:user
