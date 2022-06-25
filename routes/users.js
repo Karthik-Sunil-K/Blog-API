@@ -1,5 +1,5 @@
 const express = require('express');
-const { json } = require('express/lib/response');
+const { json, send } = require('express/lib/response');
 const router = express.Router();
 const User = require('../model/users')
 const bcrypt = require('bcrypt');
@@ -48,6 +48,33 @@ router.delete('/:id', async(req,res)=>{
         res.status(401).json({message:"u can only delete yours"})
     )
 })
+//user details get
+router.get('/user/:name',async (req,res)=>{
+    const name=req.params.name
+    try {
+        const user=await User.findOne({username:name})
+        res.status(200).json({
+            details:{user}
+        })
+    } catch (error) {
+        res.status(500).json({
+            message:"cant fetch user "+error
+        })
+    }
+})
+// user details post for search
+router.post('/user/find',async (req,res)=>{
+    try {
+        const user=await User.findOne({username:req.body.username})
+        res.status(200).json({
+            details:{user}
+        })
+    } catch (error) {
+        res.status(500).json({
+            message:"cant fetch user "+error
+        })
+    }
+})
 //admin route
 router.get('/admin/usersList/', async (req,res)=>{
     
@@ -56,7 +83,7 @@ router.get('/admin/usersList/', async (req,res)=>{
     
     res.status(200).json({
         count:users.length,
-       message:users
+       message:user
     })
  } catch (error) {
     res.status(500).json({
