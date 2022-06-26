@@ -6,7 +6,7 @@ const Catergories = require('../model/categories')
 
 
 
-router.post('/category', async (req, res) => {
+router.post('/new', async (req, res) => {
     const newcat = new Catergories(req.body);
     try {
         const categories = await newcat.save();
@@ -20,7 +20,7 @@ router.post('/category', async (req, res) => {
         })
     }
 });
-router.get('/category', async (req, res) => {
+router.get('/list', async (req, res) => {
 
     try {
         const cat = await Catergories.find()

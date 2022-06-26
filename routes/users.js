@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const { db } = require('../model/users');
 
 //userupdate
-router.put('/:id', async (req, res) => {
+router.put('/update/:id', async (req, res) => {
     if(req.body.userId==req.params.id){
         if(req.body.password){
             const salt = bcrypt.genSalt(10)
@@ -32,7 +32,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 //user delete
-router.delete('/:id', async(req,res)=>{
+router.delete('/delete/:id', async(req,res)=>{
     if(req.params.id==req.body.userId){
         try {
             await User.findByIdAndDelete(req.params.id)
@@ -49,7 +49,7 @@ router.delete('/:id', async(req,res)=>{
     )
 })
 //user details get
-router.get('/user/:name',async (req,res)=>{
+router.get('/details/:name',async (req,res)=>{
     const name=req.params.name
     try {
         const user=await User.findOne({username:name})
@@ -63,7 +63,7 @@ router.get('/user/:name',async (req,res)=>{
     }
 })
 // user details post for search
-router.post('/user/find',async (req,res)=>{
+router.post('/find',async (req,res)=>{
     try {
         const user=await User.findOne({username:req.body.username})
         res.status(200).json({

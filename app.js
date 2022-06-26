@@ -24,9 +24,9 @@ mongoose.connect(process.env.MONGO_URL,
         console.log(err);
     })
 
-app.use('/',authRouter)
-app.use('/',usersRouter)
-app.use('/',postRouter)
+app.use('/auth',authRouter)
+app.use('/user',usersRouter)
+app.use('/post',postRouter)
 app.use('/',categoriesRouter)
 
 
