@@ -130,7 +130,7 @@ Now create `.env` file
 ```
 MONGO_URL=mongodb+srv://karthik:karthik01@node-rest-shop.a4rqb.mongodb.net/?retryWrites=true&w=majority
 ```
-Add this script in ```package.json
+Add this script in `package.json`
 ```json
 "scripts": {
     "start": "nodemon app.js"
