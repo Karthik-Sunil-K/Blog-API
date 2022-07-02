@@ -4,7 +4,7 @@ const router = express.Router();
 const User = require('../model/users')
 const bcrypt = require('bcrypt');
 
-
+//REGISTER ROUTE
 router.post('/register', async (req, res) => {
     try {
         const salt = await bcrypt.genSalt(10);
@@ -35,7 +35,7 @@ router.post('/register', async (req, res) => {
     }
 })
 
-//login
+//LOGIN
 
 router.post('/login', async (req, res) => {
     try {
