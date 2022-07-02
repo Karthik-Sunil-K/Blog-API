@@ -43,16 +43,16 @@ nodemon start
 
 ## End points
 
-### User routes
-**Authentication routes:**
+### Authentication
+**Register User:**
 
-```diff
--POST /api/v1/auth/register/
+```
+POST  /api/v1/auth/register/
 ```
 Example Input:
 ```json
     {
-    "name": "nodemon app.js",
+    "username": "nodemon app.js",
     "email":"karthik@gmail.com",
     "password":"1234"
     },
@@ -63,9 +63,22 @@ Output:
       message:"user created succesfully"
     }
 ```
-```diff
--POST    /api/v1/auth/login/
+**Login user**
 ```
+POST /api/v1/auth/login/
+```
+Example Input:
+```json
+    {
+    "username": "nodemon app.js",
+    "password":"1234"
+    },
+```
+Output:
+```js
+    {
+       message: "logined successfully",
+    }
 
 **user routes:**
 
