@@ -130,23 +130,17 @@ Now create `.env` file
 ```
 MONGO_URL=mongodb+srv://karthik:karthik01@node-rest-shop.a4rqb.mongodb.net/?retryWrites=true&w=majority
 ```
-
+Add this script in ```package.json
 ```json
-{
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
-}
+"scripts": {
+    "start": "nodemon app.js"
+  },
 ```
 
-Start JSON Server
+Start server
 
 ```bash
-json-server --watch db.json
+nodemon start
 ```
 
 Now if you go to [http://localhost:3000/posts/1](http://localhost:3000/posts/1), you'll get
