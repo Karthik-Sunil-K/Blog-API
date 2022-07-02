@@ -46,27 +46,24 @@ nodemon start
 ### User routes
 **Authentication routes:**
 
-```json
+```
 POST /api/v1/auth/register/
+```
 Example Input:
-
+```json
     {
     "name": "nodemon app.js",
     "email":"karthik@gmail.com",
     "password":"1234"
     },
+```
 Output:
-
+```json
     {
       message:"user created succesfully"
     }
-(status code 200)
-
-    {
-      message:"username already exist!"
-    }
-(status code 401)
-
+```
+```
 POST    /api/v1/auth/login/
 ```
 
