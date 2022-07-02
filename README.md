@@ -36,7 +36,7 @@ nodemon start
 ```
 
 ### Route url:
-```diff
+```
 -http://localhost:3000
 ```
 
