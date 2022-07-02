@@ -113,17 +113,26 @@ Clone repository
 
 ```
 https://docs.google.com/document/d/1f-SqM6HP_l7bOL35mWTVQDf8qq0MTvX9T6A0bGc1xbI/edit?usp=sharing
-
 ```
 Install npm packages
 
 ```
+npm init
+```
+```
 npm i express
+```
+```
 npm i nodemon
+```
+```
 npm i dotenv
+```
+```
 npm i mongoose
+```
+```
 npm i bcrypt
-
 ```
 
 Create a `db.json` file with some data
