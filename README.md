@@ -58,7 +58,7 @@ Example Input:
     },
 ```
 Output:
-```json
+```js
     {
       message:"user created succesfully"
     }
