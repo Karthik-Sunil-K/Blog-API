@@ -128,7 +128,7 @@ Now create `.env` file
 <p>Add the mongodb url in .env file</p>
 
 ```
-npm i express nodemon bcrypt mongoose dotenv
+MONGO_URL=mongodb+srv://karthik:karthik01@node-rest-shop.a4rqb.mongodb.net/?retryWrites=true&w=majority
 ```
 
 ```json
