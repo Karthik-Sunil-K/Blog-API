@@ -18,7 +18,7 @@ router.put('/update/:id', async (req, res) => {
                 {$set:req.body},
             )
             res.status(200).json({
-                message:"user updaaated sduccessfully",
+                message:"user updaaated successfully",
                 user:updatedUser
             })
         } catch (error) {

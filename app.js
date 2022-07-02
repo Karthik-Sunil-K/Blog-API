@@ -24,12 +24,12 @@ mongoose.connect(process.env.MONGO_URL,
         console.log(err);
     })
 
-app.use('/auth',authRouter)
-app.use('/user',usersRouter)
-app.use('/post',postRouter)
-app.use('/',categoriesRouter)
+app.use('/api/v1/auth',authRouter)
+app.use('/api/v1/user',usersRouter)
+app.use('/api/v1/post',postRouter)
+app.use('/api/v1/category',categoriesRouter)
 
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log('server at 3000');
 })
