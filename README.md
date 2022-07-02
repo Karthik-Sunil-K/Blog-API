@@ -46,7 +46,7 @@ nodemon start
 ### User routes
 **Authentication routes:**
 
-```
+```json
 POST /api/v1/auth/register/
 Example Input:
 
