@@ -103,7 +103,7 @@ __Please help me build OSS__ 👉 [GitHub Sponsors](https://github.com/sponsors/
   * [Video](#video)
   * [Articles](#articles)
   * [Third-party tools](#third-party-tools)
-- [License](#license) --> -->
+- [License](#license) --> 
 
 <!-- tocstop -->
 
@@ -124,9 +124,11 @@ Install npm packages
 npm i express nodemon bcrypt mongoose dotenv
 ```
 
-
-Create a `db.json` file with some data
-
+Now create `.env` file
+<p>Add the mongodb url in .env file</p>
+```
+MONGO_URL=mongodb+srv://karthik:karthik01@node-rest-shop.a4rqb.mongodb.net/?retryWrites=true&w=majority
+```
 ```json
 {
   "posts": [
