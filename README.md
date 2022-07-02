@@ -67,7 +67,7 @@ __Please help me build OSS__ 👉 [GitHub Sponsors](https://github.com/sponsors/
 
 <!-- toc -->
 
-- [Getting started](#getting-started)
+<!-- - [Getting started](#getting-started)
 - [Routes](#routes)
   * [Plural routes](#plural-routes)
   * [Singular routes](#singular-routes)
@@ -103,16 +103,27 @@ __Please help me build OSS__ 👉 [GitHub Sponsors](https://github.com/sponsors/
   * [Video](#video)
   * [Articles](#articles)
   * [Third-party tools](#third-party-tools)
-- [License](#license) -->
+- [License](#license) --> -->
 
 <!-- tocstop -->
 
 ## Getting started
 
-Install JSON Server 
+Clone repository
 
 ```
-npm install -g json-server
+https://docs.google.com/document/d/1f-SqM6HP_l7bOL35mWTVQDf8qq0MTvX9T6A0bGc1xbI/edit?usp=sharing
+
+```
+Install npm packages
+
+```
+npm i express
+npm i nodemon
+npm i dotenv
+npm i mongoose
+npm i bcrypt
+
 ```
 
 Create a `db.json` file with some data
