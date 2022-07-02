@@ -46,8 +46,8 @@ nodemon start
 ### User routes
 **Authentication routes:**
 
-```
-POST /api/v1/auth/register/
+```diff
+-POST /api/v1/auth/register/
 ```
 Example Input:
 ```json
@@ -63,8 +63,8 @@ Output:
       message:"user created succesfully"
     }
 ```
-```
-POST    /api/v1/auth/login/
+```diff
+-POST    /api/v1/auth/login/
 ```
 
 **user routes:**
