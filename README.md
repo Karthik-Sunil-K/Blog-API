@@ -126,9 +126,11 @@ npm i express nodemon bcrypt mongoose dotenv
 
 Now create `.env` file
 <p>Add the mongodb url in .env file</p>
+
 ```
 npm i express nodemon bcrypt mongoose dotenv
 ```
+
 ```json
 {
   "posts": [
