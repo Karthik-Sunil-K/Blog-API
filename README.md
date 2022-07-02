@@ -35,29 +35,47 @@ Start server
 nodemon start
 ```
 
-Now if you go to [http://localhost:3000/posts/1](http://localhost:3000/posts/1), you'll get
-
-```json
-{ "id": 1, "title": "json-server", "author": "typicode" }
+### Route url:
+```diff
+-http://localhost:3000
 ```
 
-## Routes
+
+## End points
 
 ### User routes
-<font color="green"> Some green text </font>
+**Authentication routes:**
+```json
+POST /api/v1/auth/register/
+Example Input:
 
-```
-POST    /api/v1/auth/register/
+    {
+    "name": "nodemon app.js",
+    "email":"karthik@gmail.com",
+    "password":"1234"
+    },
+Output:
+
+    {
+      message:"user created succesfully"
+    }
+(status code 200)
+
+    {
+      message:"username already exist!"
+    }
+(status code 401)
+
 POST    /api/v1/auth/login/
 ```
 
-### Singular routes
+**user routes:**
 
 ```
-GET    /profile
-POST   /profile
-PUT    /profile
-PATCH  /profile
+PUT   /api/v1/user/update/:id
+DELET   /api/v1/user/update/:id
+GET    /api/v1/user/update/:id
+PATCH  /api/v1/user/update/:id
 ```
 
 ### Filter
