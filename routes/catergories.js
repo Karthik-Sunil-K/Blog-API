@@ -11,7 +11,7 @@ router.post('/new', async (req, res) => {
     try {
         const categories = await newcat.save();
         res.status(200).json({
-            message: "new category added",
+            message: "new categoryy added",
             cats: categories
         })
     } catch (error) {
