@@ -88,7 +88,7 @@ DELET   /api/v1/user/update/:id
 GET    /api/v1/user/update/:id
 PATCH  /api/v1/user/update/:id
 ```
-
+<!-- 
 ### Filter
 
 Use `.` to access deep properties
@@ -553,4 +553,4 @@ You can deploy JSON Server. For example, [JSONPlaceholder](http://jsonplaceholde
 
 MIT
 
-[Supporters](https://thanks.typicode.com) ✨
+[Supporters](https://thanks.typicode.com) ✨ -->
